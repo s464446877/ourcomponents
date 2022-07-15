@@ -1,4 +1,9 @@
 import { defineConfig } from 'dumi';
+import { join } from 'path';
+
+const alias = {
+  "@src": join(__dirname, "src")
+}
 
 export default defineConfig({
   title: 'sm-components',
@@ -35,5 +40,16 @@ export default defineConfig({
         ]
       }
     ]
-  }
+  },
+  alias: process.env.MYENV === 'dev' ? alias : {},
+  apiParser: {
+    shouldExtractLiteralValuesFromEnum: true,
+    // 自定义属性过滤配置，也可以是一个函数
+    propFilter: (prop) => {
+      if(prop.parent) {
+        return !prop.parent.fileName.includes('node_modules')
+      }
+      return true
+    },
+  },
 });
