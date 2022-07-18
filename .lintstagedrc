@@ -3,15 +3,15 @@
     "prettier --write"
   ],
   "*.{js,jsx}": [
-    "eslint --fix --eslint-only",
+    "eslint --fix --ext .js,.jsx",
     "prettier --write"
   ],
   "*.{css,less}": [
-    "eslint --fix --stylelint-only",
+    "eslint --fix --ext .css,.less",
     "prettier --write"
   ],
   "*.ts?(x)": [
-    "eslint --fix --eslint-only",
+    "eslint --fix --ext .ts,.tsx",
     "prettier --parser=typescript --write"
   ]
 }

@@ -2,8 +2,8 @@ import { defineConfig } from 'dumi';
 import { join } from 'path';
 
 const alias = {
-  "@src": join(__dirname, "src")
-}
+  '@src': join(__dirname, 'src'),
+};
 
 export default defineConfig({
   title: 'sm-components',
@@ -27,29 +27,27 @@ export default defineConfig({
         libraryDirectory: 'es',
         style: true,
       },
-      'antd'
+      'antd',
     ],
   ],
   menus: {
-    "/components": [
+    '/components': [
       {
-        title: "组件",
-        children: [
-          "Foo/index",
-          "SMButton/index"
-        ]
-      }
-    ]
+        title: '组件',
+        children: ['Foo/index', 'SMButton/index'],
+      },
+    ],
   },
   alias: process.env.MYENV === 'dev' ? alias : {},
   apiParser: {
     shouldExtractLiteralValuesFromEnum: true,
     // 自定义属性过滤配置，也可以是一个函数
     propFilter: (prop) => {
-      if(prop.parent) {
-        return !prop.parent.fileName.includes('node_modules')
+      if (prop.parent) {
+        return !prop.parent.fileName.includes('node_modules');
       }
-      return true
+      return true;
     },
   },
+  mfsu: {},
 });
