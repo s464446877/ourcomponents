@@ -13,8 +13,11 @@ specifiers:
   dumi: ^1.1.0
   father: ^4.0.0-rc.2
   gh-pages: ^3.0.0
-  lint-staged: ^10.0.7
+  husky: ^8.0.1
+  lint-staged: ^10.5.4
   prettier: ^2.2.1
+  prettier-plugin-organize-imports: ^3.0.0
+  prettier-plugin-packagejson: ^2.2.18
   yorkie: ^2.0.0
 
 dependencies:
@@ -32,8 +35,11 @@ devDependencies:
   dumi: 1.1.45
   father: 4.0.0-rc.3
   gh-pages: 3.2.3
+  husky: 8.0.1
   lint-staged: 10.5.4
   prettier: 2.7.1
+  prettier-plugin-organize-imports: 3.0.0_prettier@2.7.1
+  prettier-plugin-packagejson: 2.2.18_prettier@2.7.1
   yorkie: 2.0.0
 
 packages:
@@ -2507,7 +2513,7 @@ packages:
   /@types/sax/1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 14.18.22
+      '@types/node': 18.0.6
     dev: true
 
   /@types/scheduler/0.16.2:
@@ -6587,6 +6593,12 @@ packages:
     engines: {node: '>=8.12.0'}
     dev: true
 
+  /husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -9928,6 +9940,15 @@ packages:
   /prepend-http/1.0.4:
     resolution: {integrity: sha512-PhmXi5XmoyKw1Un4E+opM2KcsJInDvKyuOumcjjw3waw86ZNjHwVUOOWLc4bCzLdcKNaWBH9e99sbWzDQsVaYg==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /prettier-plugin-organize-imports/3.0.0_prettier@2.7.1:
+    resolution: {integrity: sha512-juSCJs5TMOqGGPaN/A/1xzWFzRPH2LG1LPLCr64dzKaVnPafJdtgDNmDVlU+8A4LbQzVJg0DTvgA8swBuIUhlg==}
+    peerDependencies:
+      prettier: '>=2.0'
+      typescript: '>=2.9'
+    dependencies:
+      prettier: 2.7.1
     dev: true
 
   /prettier-plugin-packagejson/2.2.18_prettier@2.7.1:

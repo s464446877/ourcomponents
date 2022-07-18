@@ -1,0 +1,17 @@
+{
+  "*.{md,json}": [
+    "prettier --write"
+  ],
+  "*.{js,jsx}": [
+    "npm run lint --fix --eslint-only",
+    "prettier --write"
+  ],
+  "*.{css,less}": [
+    "npm run lint --fix --stylelint-only",
+    "prettier --write"
+  ],
+  "*.ts?(x)": [
+    "npm run lint --fix --eslint-only",
+    "prettier --parser=typescript --write"
+  ]
+}
