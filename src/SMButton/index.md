@@ -9,7 +9,6 @@ nav:
 Demo:
 
 ```tsx
-import React from 'react';
 import { SMButton } from 'smcomponents';
 
 export default () => {
