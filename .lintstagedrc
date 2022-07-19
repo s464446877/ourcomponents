@@ -6,6 +6,10 @@
     "eslint --fix --ext .js,.jsx",
     "prettier --write"
   ],
+  "*.{less}": [
+    "stylelint --syntax less",
+    "prettier --write"
+  ],
   "*.ts?(x)": [
     "eslint --fix --ext .ts,.tsx",
     "prettier --parser=typescript --write"
