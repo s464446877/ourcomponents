@@ -34,7 +34,7 @@ export default defineConfig({
     '/components': [
       {
         title: '组件',
-        children: ['Foo/index', 'SMButton/index'],
+        children: ['Foo/index', 'SMButton/index', 'SMButton_Antd/index'],
       },
     ],
   },
