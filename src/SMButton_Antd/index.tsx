@@ -3,31 +3,36 @@ import './index.less';
 
 export type SMButtonProps = {
   /**
-   * @description 标题名称
-   * @default primary
+   * @description 按钮类型
+   * @default default
    */
-  type?: 'primary' | 'dashed' | 'link' | 'text' | 'default';
-  onClick?: Function;
+  btnType?: 'primary' | 'dashed' | 'link' | 'text' | 'default';
+  /**
+   * @description 禁用
+   * @default false
+   */
   disabled?: boolean;
   children?: React.ReactNode;
-};
+} & Partial<React.ButtonHTMLAttributes<HTMLElement>>;
 
 const SMButton_Antd: React.FC<SMButtonProps> = (props) => {
-  const { children, type = 'default', onClick, disabled = false } = props;
+  const { children, btnType, disabled, ...rest } = props;
   return (
     <>
       <button
-        className={'sm-button-antd' + ' ' + 'sm-button-' + type}
-        onClick={(e) => {
-          if (disabled) return;
-          onClick?.(e);
-        }}
+        className={'sm-button-antd' + ' ' + 'sm-button-' + btnType}
         disabled={disabled}
+        {...rest}
       >
         {children}
       </button>
     </>
   );
+};
+
+SMButton_Antd.defaultProps = {
+  btnType: 'default',
+  disabled: false,
 };
 
 export default SMButton_Antd;

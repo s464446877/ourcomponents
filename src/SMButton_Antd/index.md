@@ -16,11 +16,11 @@ export default () => {
   return (
     <>
       <SMButton_Antd>Default Button</SMButton_Antd>
-      <SMButton_Antd type="primary">primary Button</SMButton_Antd>
-      <SMButton_Antd type="dashed">dashed Button</SMButton_Antd>
+      <SMButton_Antd btnType="primary">primary Button</SMButton_Antd>
+      <SMButton_Antd btnType="dashed">dashed Button</SMButton_Antd>
       <br />
-      <SMButton_Antd type="text">text Button</SMButton_Antd>
-      <SMButton_Antd type="link">link Button</SMButton_Antd>
+      <SMButton_Antd btnType="text">text Button</SMButton_Antd>
+      <SMButton_Antd btnType="link">link Button</SMButton_Antd>
       <br />
       <SMButton_Antd disabled>disabled</SMButton_Antd>
     </>
