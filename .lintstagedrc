@@ -7,7 +7,7 @@
     "prettier --write"
   ],
   "*.{css,less}": [
-    "eslint --fix --ext .css,.less",
+    "stylelint --fix --ext .css,.less",
     "prettier --write"
   ],
   "*.ts?(x)": [
