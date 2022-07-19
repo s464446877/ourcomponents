@@ -9,6 +9,7 @@ specifiers:
   '@umijs/test': ^3.0.5
   antd: ^4.21.6
   babel-plugin-import: ^1.13.5
+  classnames: ^2.3.1
   cross-env: ^7.0.3
   dumi: ^1.1.0
   father: ^4.0.0-rc.2
@@ -25,6 +26,7 @@ specifiers:
 dependencies:
   antd: 4.21.6
   babel-plugin-import: 1.13.5
+  classnames: 2.3.1
 
 devDependencies:
   '@testing-library/jest-dom': 5.16.4

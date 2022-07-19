@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "antd": "^4.21.6",
-    "babel-plugin-import": "^1.13.5"
+    "babel-plugin-import": "^1.13.5",
+    "classnames": "^2.3.1"
   }
 }
