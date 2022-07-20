@@ -1,24 +1,67 @@
+import classNames from 'classnames';
 import React from 'react';
-import { Button } from 'antd';
-import type { ButtonProps } from 'antd';
 import './index.less';
 
-export type SMButtonProps = {
+export type BaseButtonProps = {
   /**
-   * @description 标题名称
-   * @default 我和按钮在一起,我们是一个组件
+   * @description 自定义类名
    */
-  title: string;
-} & ButtonProps;
+  className?: string;
+  /**
+   * @description 禁用按钮
+   * @default false
+   */
+  disabled?: boolean;
+  /**
+   * @description 按钮尺寸
+   */
+  size?: 'large' | 'small';
+  /**
+   * @description 按钮类型
+   * @default defalut
+   */
+  btnType?: 'primary' | 'dashed' | 'link' | 'text' | 'default';
+  children: React.ReactNode;
+  /**
+   * @description link类型时跳转链接
+   */
+  href?: string;
+};
+type NativeButtonProps = BaseButtonProps &
+  React.ButtonHTMLAttributes<HTMLElement>;
+type AnchorButtonProps = BaseButtonProps &
+  React.AnchorHTMLAttributes<HTMLElement>;
 
-const SMButton: React.FC<SMButtonProps> = props => {
-  const { children, title = '我和按钮在一起,我们是一个组件', ...rest } = props;
-  return (
-    <div className='sm-button'>
-      <div>{title}</div>
-      <Button {...rest}>{children}</Button>
-    </div>
-  )
-}
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+
+const SMButton: React.FC<ButtonProps> = (props) => {
+  const { children, btnType, size, disabled, href, className, ...rest } = props;
+
+  // sm-btn sm-btn-large sm-btn-primary
+  const classes = classNames('sm-btn', className, {
+    [`sm-btn-${btnType}`]: btnType,
+    [`sm-btn-${size}`]: size,
+    disabled: btnType === 'link' && disabled,
+  });
+
+  if (btnType === 'link' && href) {
+    return (
+      <a href={href} className={classes} {...rest}>
+        {children}
+      </a>
+    );
+  } else {
+    return (
+      <button className={classes} disabled={disabled} {...rest}>
+        {children}
+      </button>
+    );
+  }
+};
+
+SMButton.defaultProps = {
+  disabled: false,
+  btnType: 'default',
+};
 
 export default SMButton;
